@@ -3,9 +3,18 @@
   become: yes
   tasks:
   - name: disable old version of nodejs  and enable new versio
-    ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
+    ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
   
   - name: disable old nodejs and enable nodejs
     ansible.builtin.dnf:
       name: nodejs
       state: present
+  
+  - name: create roboshop user
+    ansible.builtin.user:
+      name: roboshop
+
+  - name: create app directory
+    ansible.builtin.file:
+      path: /app
+      state: directory
