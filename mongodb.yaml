@@ -1,5 +1,5 @@
 - name: mongodb
-  hosts: localhost
+  hosts: localhost # need to give instance name here by adding ip address of instace in inventory filed due to error i have used local host here
   become: yes
   tasks:
   - name: Copy mongodb repo
