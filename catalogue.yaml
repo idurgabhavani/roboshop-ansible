@@ -51,7 +51,7 @@
 
   - name: install mongodb-client
     ansible.builtin.package:
-      name: mongodb-mongosh
+      name: mongodb-org-shell
       state: present
 
      
