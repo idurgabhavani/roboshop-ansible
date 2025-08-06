@@ -1,0 +1,10 @@
+- name: install Web component
+  hosts: localhost  # need to give instance name here by adding ip address of instace in inventory filed due to error i have used local host here
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    
+  
