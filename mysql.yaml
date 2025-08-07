@@ -1,0 +1,10 @@
+- name: installing mysql component
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Disabelling current version of mysql
+      ansible.builtin.command: dnf module disable mysql -y
+
+    - name:
+
+      
